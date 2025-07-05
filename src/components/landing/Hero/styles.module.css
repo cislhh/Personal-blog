@@ -1,6 +1,6 @@
 /* hero */
 .hero {
-  @apply h-[calc(100vh-60px)] w-screen max-w-full m-0 grid grid-cols-[8fr_11fr] items-center relative;
+  @apply h-[calc(100vh-60px)] w-screen max-w-full m-0 grid grid-cols-[9fr_8fr] items-center relative overflow-hidden;
   letter-spacing: 0.04em;
   padding: 0;
 }
@@ -43,7 +43,7 @@
 }
 
 .background {
-  @apply relative w-full h-[90%] grid place-items-center items-start;
+  @apply relative w-full h-[90%] grid place-items-center items-start transform -translate-x-[20px];
   z-index: 5;
 }
 
