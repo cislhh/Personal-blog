@@ -9,7 +9,7 @@ description: 使用 docusaurus 搭建个人博客，并对其主题进行魔改
 image: /img/project/blog.png
 ---
 
-博客地址: [愧怍的小站](https://kuizuo.me/)
+博客地址: [淬己的小站](https://kuizuo.me/)
 
 时隔近半年没好好整理文章，博客也写的不像个人样。:joy:
 
