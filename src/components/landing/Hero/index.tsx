@@ -8,6 +8,8 @@ import SocialLinks from '@site/src/components/SocialLinks'
 import { MovingButton } from '../../magicui/moving-border'
 import styles from './styles.module.css'
 
+import { useHistory } from 'react-router-dom'
+
 const variants: Variants = {
   visible: i => ({
     opacity: 1,
@@ -57,6 +59,11 @@ function Name() {
 }
 
 export default function Hero() {
+  const history = useHistory()
+  const movingAbout = () => {
+    history.push('/about')
+  }
+  // console.log(movingAbout, 'data----movingAbout')
   return (
     <motion.div className={styles.hero}>
       <div className={styles.intro}>
@@ -71,11 +78,13 @@ export default function Hero() {
         </motion.div>
 
         <motion.div className="mt-4 flex gap-2" custom={4} initial="hidden" animate="visible" variants={variants}>
+
           <MovingButton
+            onClick={movingAbout}
             borderRadius="1.25rem"
-            className="relative z-10 flex items-center rounded-2xl border border-solid border-neutral-200 bg-background px-5 py-3 text-center text-base font-semibold dark:border-neutral-800"
+            className="relative z-10 flex cursor-pointer items-center rounded-2xl border border-solid border-neutral-200 bg-background px-5 py-3 text-center text-base font-semibold dark:border-neutral-800"
           >
-            <a href="/about" className="font-semibold">
+            <a className="font-semibold">
               <Translate id="hompage.hero.introduce">自我介绍</Translate>
             </a>
           </MovingButton>
