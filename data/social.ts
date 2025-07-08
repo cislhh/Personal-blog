@@ -20,28 +20,28 @@ type SocialValue = {
 const social: Social = {
   github: 'https://github.com/kuizuo',
   x: 'https://twitter.com/kuizuo',
-  juejin: 'https://juejin.cn/user/1565318510545901',
+  // juejin: 'https://juejin.cn/user/1565318510545901',
   wx: 'https://img.kuizuo.me/wechat.png',
   // qq: 'https://img.kuizuo.me/qq.png',
   // zhihu: 'https://www.zhihu.com/people/kuizuo',
   cloudmusic: 'https://music.163.com/#/user/home?id=1333010742',
-  email: 'mailto:hi@kuizuo.me',
+  email: 'mailto:1353761785@qq.com',
   discord: 'https://discord.gg/M8cVcjDxkz',
 }
 
-const socialSet: Record<keyof Social | 'rss', SocialValue> = {
+const socialSet: Partial<Record<keyof Social | 'rss', SocialValue>> = {
   github: {
     href: social.github,
     title: 'GitHub',
     icon: 'ri:github-line',
     color: '#010409',
   },
-  juejin: {
-    href: social.juejin,
-    title: '掘金',
-    icon: 'simple-icons:juejin',
-    color: '#1E81FF',
-  },
+  // juejin: {
+  //   href: social.juejin,
+  //   title: '掘金',
+  //   icon: 'simple-icons:juejin',
+  //   color: '#1E81FF',
+  // },
   x: {
     href: social.x,
     title: 'X',
