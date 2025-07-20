@@ -22,3 +22,7 @@
 .socialLinks svg path {
   @apply size-6;
 }
+
+.socialLinks .wximg {
+  @apply absolute top-full left-full -translate-x-1/2 max-w-[150px] h-[170px] mt-2 z-10 shadow-sm border-r-8;
+}

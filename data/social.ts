@@ -15,13 +15,14 @@ type SocialValue = {
   title: string
   icon: string
   color: string
+  type?: string
 }
 
 const social: Social = {
-  github: 'https://github.com/kuizuo',
-  x: 'https://twitter.com/kuizuo',
+  github: 'https://github.com/cislhh',
+  x: 'https://twitter.com/cuiji',
   // juejin: 'https://juejin.cn/user/1565318510545901',
-  wx: 'https://img.kuizuo.me/wechat.png',
+  wx: '/img/mywx.png',
   // qq: 'https://img.kuizuo.me/qq.png',
   // zhihu: 'https://www.zhihu.com/people/kuizuo',
   cloudmusic: 'https://music.163.com/#/user/home?id=1333010742',
@@ -46,13 +47,14 @@ const socialSet: Partial<Record<keyof Social | 'rss', SocialValue>> = {
     href: social.x,
     title: 'X',
     icon: 'ri:twitter-x-line',
-    color: '#000',
+    color: '#12affa',
   },
   wx: {
     href: social.wx,
     title: '微信',
     icon: 'ri:wechat-2-line',
-    color: '#07c160',
+    color: '#00ac62',
+    type: 'wx',
   },
   zhihu: {
     href: social.zhihu,

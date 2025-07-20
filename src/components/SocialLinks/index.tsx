@@ -1,7 +1,8 @@
 import { Icon } from '@iconify/react'
 import social from '@site/data/social'
 import Tooltip from '@site/src/components/Tooltip'
-import React from 'react'
+import React, { ReactElement, useState } from 'react'
+import Image from '@theme/IdealImage'
 import styles from './styles.module.css'
 
 export type Social = {
@@ -21,15 +22,41 @@ interface Props {
   title: string
   color?: string
   icon: string | JSX.Element
-  [key: string]: unknown
+  type: string
+  style: React.CSSProperties & { [key: string]: string }
 }
 
-function SocialLink({ href, icon, title, color, ...prop }: Props) {
+const renderers: Record<string, (params: { icon: React.ReactNode, title: string }) => React.ReactNode> = {
+  wx: ({ icon, title, ...prop }) => {
+    const [showImage, setShowImage] = useState(false)
+    const wximg = 'img/mywx.png'
+    return (
+      <a
+        title={title}
+        {...prop}
+        onClick={() => setShowImage(!showImage)}
+      >
+        {icon}
+        {showImage && (
+          <Image src={wximg} alt={wximg} img="" className={styles.wximg} />
+        )}
+      </a>
+    )
+  },
+}
+
+function SocialLink({ href, icon, title, color, type, ...prop }: Props) {
+  const iconNode = typeof icon === 'string' ? <Icon icon={icon} /> : icon
+  const content = (renderers[type]
+    ? renderers[type]({ icon: iconNode, title, ...prop })
+    : (
+        <a href={href} target="_blank" {...prop} title={title}>
+          {iconNode}
+        </a>
+      ))
   return (
     <Tooltip key={title} text={title} anchorEl="#__docusaurus" id={`tooltip-${title}`}>
-      <a href={href} target="_blank" {...prop} title={title}>
-        {typeof icon === 'string' ? <Icon icon={icon} /> : icon}
-      </a>
+      {content as ReactElement}
     </Tooltip>
   )
 }
@@ -39,8 +66,8 @@ export default function SocialLinks({ ...prop }) {
     <div className={styles.socialLinks} {...prop}>
       {Object.entries(social)
         .filter(([_key, { href }]) => href)
-        .map(([key, { href, icon, title, color }]) => {
-          return <SocialLink key={key} href={href!} title={title} icon={icon} style={{ '--color': color }} />
+        .map(([key, { href, icon, title, color, type }]) => {
+          return <SocialLink key={key} href={href!} title={title} icon={icon} type={type as string} style={{ '--color': color, 'position': 'relative', 'cursor': 'pointer' }} />
         })}
     </div>
   )
