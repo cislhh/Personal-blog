@@ -5,7 +5,7 @@ const { default: blogPlugin } = blogPluginExports
 async function blogPluginEnhanced(context, options) {
   const blogPluginInstance = await blogPlugin(context, options)
   const { postsPerPage } = options
-
+  console.log(blogPluginInstance, 'data----blogPluginInstance')
   return {
     ...blogPluginInstance,
     async contentLoaded({ content, allContent, actions }) {
