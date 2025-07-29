@@ -26,6 +26,7 @@ const social: Social = {
   // qq: 'https://img.kuizuo.me/qq.png',
   // zhihu: 'https://www.zhihu.com/people/kuizuo',
   cloudmusic: 'https://music.163.com/#/user/home?id=1333010742',
+  // email: 'mailto:sunyanxin@bj.chinalife-p.com.cn',
   email: 'mailto:1353761785@qq.com',
   discord: 'https://discord.gg/M8cVcjDxkz',
 }
