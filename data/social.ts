@@ -20,7 +20,7 @@ type SocialValue = {
 
 const social: Social = {
   github: 'https://github.com/cislhh',
-  x: 'https://twitter.com/cuiji',
+  // x: 'https://twitter.com/cuiji',
   // juejin: 'https://juejin.cn/user/1565318510545901',
   wx: '/img/mywx.png',
   // qq: 'https://img.kuizuo.me/qq.png',
@@ -28,7 +28,7 @@ const social: Social = {
   cloudmusic: 'https://music.163.com/#/user/home?id=1333010742',
   // email: 'mailto:sunyanxin@bj.chinalife-p.com.cn',
   email: 'mailto:1353761785@qq.com',
-  discord: 'https://discord.gg/M8cVcjDxkz',
+  // discord: 'https://discord.gg/M8cVcjDxkz',
 }
 
 const socialSet: Partial<Record<keyof Social | 'rss', SocialValue>> = {
@@ -44,12 +44,12 @@ const socialSet: Partial<Record<keyof Social | 'rss', SocialValue>> = {
   //   icon: 'simple-icons:juejin',
   //   color: '#1E81FF',
   // },
-  x: {
-    href: social.x,
-    title: 'X',
-    icon: 'ri:twitter-x-line',
-    color: '#12affa',
-  },
+  // x: {
+  //   href: social.x,
+  //   title: 'X',
+  //   icon: 'ri:twitter-x-line',
+  //   color: '#12affa',
+  // },
   wx: {
     href: social.wx,
     title: '微信',
@@ -87,12 +87,12 @@ const socialSet: Partial<Record<keyof Social | 'rss', SocialValue>> = {
     icon: 'ri:netease-cloud-music-line',
     color: '#C20C0C',
   },
-  rss: {
-    href: '/blog/rss.xml',
-    title: 'RSS',
-    icon: 'ri:rss-line',
-    color: '#FFA501',
-  },
+  // rss: {
+  //   href: '/blog/rss.xml',
+  //   title: 'RSS',
+  //   icon: 'ri:rss-line',
+  //   color: '#FFA501',
+  // },
 }
 
 export default socialSet
